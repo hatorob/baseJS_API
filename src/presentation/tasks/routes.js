@@ -7,6 +7,10 @@ class TaskRoutes {
         const router = Router();
         const taskController = new TasksController();
         router.get('/', taskController.getTasks);
+        router.get('/:id', taskController.getTasksById);
+        router.post('/add', taskController.createTask);
+        router.put('/update', taskController.updateTask);
+        router.put('/delate', taskController.deleteTask);
 
 
         return router;

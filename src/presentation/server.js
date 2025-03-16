@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const sequelize = require("../config/database");
-const { TaskSchema } = require("../models");
+const { TaskSchema, UsersSchema } = require("../models");
 
 class ServerApp {
 
@@ -29,6 +29,7 @@ class ServerApp {
         } catch (error) {
             console.log("Error Conection to BD",error);
             //process.exit(1);
+
         }
     }
 

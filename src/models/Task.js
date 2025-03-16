@@ -1,5 +1,6 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/database");
+const UsersSchema = require("./User");
 
 const TaskSchema = sequelize.define("TaskSchema", {
     id: {
@@ -16,6 +17,21 @@ const TaskSchema = sequelize.define("TaskSchema", {
         allowNull: false,
         unique: false,
     },
+    user: { 
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: UsersSchema,
+            key: "id",
+        },
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
+    },
+    status: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true
+    }
 }, {
     tableName: "tasks",
     timestamps: true,

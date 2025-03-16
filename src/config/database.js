@@ -8,7 +8,11 @@ const sequelize = new Sequelize(
     {
         host: "localhost",
         dialect: "mysql",
-        logging: false,
+        dialectOptions: {
+            timezone: "America/Bogota",
+        },
+        timezone: "-05:00",
+        logging: console.log,
     }
 );
 

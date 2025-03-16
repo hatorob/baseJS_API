@@ -51,3 +51,7 @@ npm i express
 instalar dotenv para obtener variables de entorno
 npm i dotenv
 ```
+7. Para generar tokes y encriptar contraseñas
+```
+npm install jsonwebtoken bcryptjs
+```
