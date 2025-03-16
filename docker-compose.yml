@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+
+  mysql-db:
+    image: mysql:8.0 # Cambiar a la imagen de MySQL
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DB}          # Base de datos predeterminada
+      MYSQL_USER: ${MYSQL_USER}                  # Usuario adicional
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}          # Contraseña para el usuario adicional
+    volumes:
+      - ./mysql:/var/lib/mysql                   # Volumen para persistir los datos
+    ports:
+      - 3306:3306                                # Puerto de MySQL
